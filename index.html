@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QuizMaster | AI Mini Mock Test</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="quiz-container">
+
+        <div class="header">
+            <div class="logo">QuizMaster AI</div>
+            <div class="timer">⏱ <span id="time">30</span>s</div>
+        </div>
+
+        <!-- Setup Section -->
+        <div id="setup">
+
+            <h2>AI Mini Mock Test</h2>
+
+            <div class="student-box">
+                <input
+                    type="text"
+                    id="studentName"
+                    placeholder="Enter your name"
+                    maxlength="50"
+                >
+            </div>
+
+            <div class="student-box">
+                <select id="topic">
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Python">Python</option>
+                    <option value="Computer Science">Computer Science</option>
+                </select>
+            </div>
+
+            <div class="student-box">
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+
+            <button class="next-btn" id="startBtn">
+                Generate AI Quiz →
+            </button>
+
+            <p id="loadingText"></p>
+
+        </div>
+
+        <!-- Quiz Section -->
+        <div id="quiz" class="hidden">
+
+            <div class="progress-info">
+                <span id="questionCount">Question 1 of 5</span>
+                <span id="scoreText">Score: 0</span>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+
+            <h2 class="question" id="question"></h2>
+
+            <div class="options" id="options"></div>
+
+            <p id="feedback"></p>
+
+            <button class="next-btn" id="nextBtn" disabled>
+                Next Question →
+            </button>
+
+        </div>
+
+        <!-- Result Section -->
+        <div class="result hidden" id="result">
+
+            <h2>🎉 Quiz Completed!</h2>
+
+            <p>Your Final Score</p>
+
+            <div class="score" id="finalScore">0/5</div>
+
+            <p id="message"></p>
+
+            <h3>🤖 AI Feedback</h3>
+
+            <p id="aiFeedback">
+                Generating feedback...
+            </p>
+
+            <button class="restart-btn" onclick="restartQuiz()">
+                Generate New Quiz
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
